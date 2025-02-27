@@ -6,16 +6,24 @@ body {
   background-color: #f9f9f9;
 }
 
-/* Navbar Styling */
+/* 🔹 Navbar Styling (Full Width & Fixed) */
 .navbar {
   display: flex;
+  flex-wrap: wrap; /* Allows stacking */
   justify-content: space-between;
   align-items: center;
   background-color: white;
   padding: 10px 15px;
   border-bottom: 1px solid grey;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  max-width: none;
+  margin: 0;
+  z-index: 1000;
+  height: auto; /* Allows navbar to expand */
+  min-height: 60px;
 }
 
 /* Navbar Left Section (Logo) */
@@ -30,16 +38,18 @@ body {
   height: auto;
 }
 
-/* Navigation Menu (Visible on Large Screens) */
+/* 🔹 Navigation Menu */
 .nav-menu {
   list-style: none;
   display: flex;
   padding: 0;
   margin: 0;
+  align-items: center;
+  gap: 15px;
 }
 
 .nav-menu li {
-  margin: 0 15px;
+  white-space: nowrap;
 }
 
 .nav-menu li a {
@@ -48,29 +58,65 @@ body {
   font-weight: bold;
   padding: 8px 12px;
   transition: 0.3s;
+  display: inline-block;
 }
 
 .nav-menu li a:hover {
   color: grey;
 }
 
-/* Right-side navigation (Sign In & Sign Up) */
+/* 🔹 Navbar Right Section (Sign In Button Stacks Below) */
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 10px;
+  margin-left: auto;
+  padding-right: 20px;
+  flex-shrink: 0;
+  position: static;
+  right: 0;
 }
 
-/* Button Styling */
+/* 🔹 Make Navbar Taller & Stack Sign In Button Below on Medium Screens */
+@media (max-width: 1024px) {
+  .navbar {
+    flex-direction: column; /* Allows items to stack */
+    align-items: center;
+    height: auto; /* Allows navbar to expand */
+    padding-bottom: 20px; /* Extra space for Sign In button */
+  }
+
+  .nav-right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; /* Adds space between menu and button */
+  }
+
+  .btn {
+    display: block;
+    text-align: center;
+    width: 150px;
+    padding: 8px 12px;
+    margin: 0 auto;
+  }
+}
+
+/* 🔹 Button Styling */
 .btn {
   text-decoration: none;
-  padding: 8px 15px;
-  border-radius: 3px;
+  padding: 8px 12px;
+  border-radius: 5px;
   font-weight: bold;
   color: black;
   background-color: white;
   border: 1px solid black;
   transition: 0.3s;
+  width: auto;
+  min-width: 90px;
+  max-width: 120px;
+  text-align: center;
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .btn:hover {
@@ -78,19 +124,19 @@ body {
   color: white;
 }
 
-/* 🔹 Hamburger Menu Button */
-.hamburger {
-  display: none; /* Hidden on large screens */
-  font-size: 30px; /* Make it larger */
-  cursor: pointer;
-  background: none;
-  border: none;
-  outline: none;
-  color: black; /* Ensure visibility */
-  position: absolute;
-  right: 20px;
-  top: 15px;
-  z-index: 1000; /* Ensure it's above everything */
+/* 🔹 Fix for Hidden Content (Push Main Content Below Navbar) */
+main {
+  text-align: center;
+  padding: 20px;
+  max-width: 800px;
+  margin: 100px auto 0; /* Extra space to accommodate larger navbar */
+}
+
+/* 🔹 Ensure Headings & Paragraphs Are Centered */
+main h1,
+main h2,
+main p {
+  text-align: center;
 }
 
 /* 🔹 Product List Styling */
@@ -105,45 +151,35 @@ body {
 /* 🔹 Product Box Styling */
 .product {
   background: white;
-  border: 1px solid #ddd; /* Light grey border */
+  border: 1px solid #ddd;
   padding: 15px;
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   width: 250px;
   text-align: center;
   transition: 0.3s ease-in-out;
 }
 
 .product:hover {
-  transform: translateY(-5px); /* Slight lift effect on hover */
+  transform: translateY(-5px);
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
-}
-
-/* 🔹 Product Title */
-.product h3 {
-  font-size: 18px;
-  color: black;
-  margin-bottom: 10px;
-}
-
-/* 🔹 Product Price */
-.product p {
-  font-size: 16px;
-  color: grey;
 }
 
 /* 🔹 Add to Cart Button */
 .product button {
   background-color: black;
   color: white;
-  padding: 10px;
+  padding: 6px 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
   font-size: 14px;
-  width: 100%;
-  margin-top: 10px;
+  width: auto;
+  min-width: 100px;
+  max-width: 120px;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .product button:hover {
@@ -151,63 +187,33 @@ body {
   color: black;
 }
 
-/* 🔹 Responsive Styling for Medium Screens (Tablets, Small Laptops) */
-@media (max-width: 1024px) {
-  .navbar {
-    padding: 10px;
-    flex-wrap: wrap;
-  }
-
-  .nav-menu {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .nav-menu li {
-    margin: 5px 10px;
-  }
-
-  .nav-right {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
-
 /* 🔹 Mobile View (Small Screens) */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     align-items: center;
+    height: auto;
+    padding-bottom: 20px;
   }
 
-  /* Show hamburger menu */
-  .hamburger {
-    display: block;
-  }
-
-  /* Hide menu by default on small screens */
   .nav-menu {
-    display: none;
     flex-direction: column;
-    align-items: center;
     width: 100%;
-    background-color: white;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    text-align: center;
-    padding: 10px 0;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  /* Show menu when active */
-  .nav-menu.active {
-    display: flex;
   }
 
   .nav-right {
     flex-direction: column;
-    align-items: center;
-    gap: 5px;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  main {
+    width: 90%;
+    max-width: none;
   }
 }

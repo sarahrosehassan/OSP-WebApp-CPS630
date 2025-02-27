@@ -1,5 +1,4 @@
 <?php
-// Start session and include database connection
 session_start();
 include '../db/db.php';  // Database connection file
 include 'fetch_products.php';  // Fetch products from DB

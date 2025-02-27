@@ -36,6 +36,6 @@ if (file_exists($sqlFile)) {
     }
 }
 
-// Close connection
+// Close connection 
 //$conn->close();
 ?>
