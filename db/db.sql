@@ -22,7 +22,7 @@ CREATE TABLE User_Table (
     Name VARCHAR(255) NOT NULL,
     Tel_No VARCHAR(20) UNIQUE NOT NULL,
     Email VARCHAR(255) UNIQUE NOT NULL,
-    Address TEXT,
+    Address TEXT NOT NULL,
     City_Code VARCHAR(50),
     Login_Id VARCHAR(50) UNIQUE NOT NULL,
     Password VARCHAR(255) NOT NULL,

@@ -54,9 +54,13 @@ include 'fetch_user.php'; // Fetch user details
             <form action="../auth/signup.php" method="POST">
                 <input type="text" name="name" placeholder="Full Name" required>
                 <input type="email" name="email" placeholder="Email" required>
+                <input type="text" name="login_id" placeholder="Username (Login ID)" required>
                 <input type="password" name="password" placeholder="Password" required>
+                <input type="text" name="tel_no" placeholder="Phone Number" required>
+                <input type="text" name="address" placeholder="Mailing Address" required>
                 <button type="submit">Sign Up</button>
-            </form>
+</form>
+
         </div>
     </div>
 </div>

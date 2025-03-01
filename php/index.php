@@ -16,7 +16,6 @@ ini_set('display_errors', 1);
     <title>OSP Web Application</title>
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/script.js" defer></script>
-    <script src="../js/auth.js" defer></script>
 </head>
 <body>
 
