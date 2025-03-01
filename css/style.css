@@ -6,6 +6,12 @@ body {
   background-color: #f9f9f9;
 }
 
+.main-content {
+  margin-top: 150px; /* Increase this value to move it lower */
+  padding-top: 50px; /* Optional */
+  text-align: center; /* Keeps text centered */
+}
+
 /* 🔹 Navbar Styling (Full Width & Fixed) */
 .navbar {
   display: flex;
@@ -267,4 +273,45 @@ main p {
 #loginForm,
 #signupForm {
   display: block;
+}
+
+/* Shopping Cart Styling */
+.cart-container {
+  margin-top: 20px;
+}
+
+.cart {
+  border: 2px dashed #000;
+  padding: 15px;
+  width: 300px;
+  min-height: 100px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  background: #eee;
+  margin-top: 5px;
+}
+
+.cart-item button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* Products */
+.product {
+  border: 1px solid #ccc;
+  padding: 15px;
+  width: 250px;
+  text-align: left;
+  background: white;
+  margin-bottom: 10px;
+  cursor: grab;
 }

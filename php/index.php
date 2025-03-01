@@ -22,18 +22,11 @@ ini_set('display_errors', 1);
 
     <!-- Include Navbar -->
     <?php include 'header.php'; ?>
-
-    <main>
+    
+    <main class="main-content">
+    <br><br><br> <!-- Adds space -->
         <h1>Welcome to OSP Web App</h1>
         <p>Your one-stop solution for shopping, delivery, and payments.</p>
-
-        <h2>Explore Our Services</h2>
-        <ul>
-            <li><a href="shopping.php">🛍️ Shop Now</a></li>
-            <li><a href="services.php">🛠️ Types of Services</a></li>
-            <li><a href="delivery.php">🚚 Track Your Delivery</a></li>
-            <li><a href="payment.php">💳 Manage Payments</a></li>
-        </ul>
     </main>
 
 </body>
