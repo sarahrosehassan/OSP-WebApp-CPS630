@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 include '../db/db.php'; // Include database connection
 include 'fetch_user.php'; // Fetch user details
 ?>
@@ -20,14 +22,44 @@ include 'fetch_user.php'; // Fetch user details
             </ul>
         </div>
 
-        <!-- Navbar Right (Only Sign In & Logout Options) -->
+        <!-- Navbar Right -->
         <div class="nav-right">
             <?php if ($user): ?>
                 <span>Welcome, <?= htmlspecialchars($user['Name']) ?> (Balance: $<?= number_format($user['Balance'], 2) ?>)</span>
                 <a href="logout.php" class="btn">Logout</a>
             <?php else: ?>
-                <a href="signin.php" class="btn">Sign In</a>
+                <button class="btn" id="openAuthModal">Sign In</button>
             <?php endif; ?>
         </div>
     </nav>
+
+    <!-- Authentication Modal (Hidden by Default) -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="auth-tabs">
+                <button id="showLogin" class="active">Sign In</button>
+                <button id="showSignup">Sign Up</button>
+            </div>
+            <div id="loginForm">
+                <h2>Sign In</h2>
+                <form action="../auth/signin.php" method="POST">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Sign In</button>
+                </form>
+            </div>
+            <div id="signupForm" style="display: none;">
+            <h2>Sign Up</h2>
+            <form action="../auth/signup.php" method="POST">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
 </header>
