@@ -1,0 +1,128 @@
+.reviews-body {
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    color: #1a1a1a;
+  }
+  
+  .container {
+    padding-top: 40px;
+    max-width: 1200px;
+  }
+  
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #1a1a1a;
+    position: relative;
+  }
+  
+  h1::after {
+    content: '';
+    width: 80px;
+    height: 3px;
+    background-color: #d4af37;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+  }
+  
+  .item-image {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+  }
+  
+  .item-image:hover {
+    transform: scale(1.03);
+  }
+  
+  .item-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 35px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+    margin-bottom: 35px;
+    transition: all 0.3s ease;
+  }
+  
+  .item-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 1.8rem;
+    justify-content: center;
+    margin: 10px 0 20px;
+  }
+  
+  .star-rating input {
+    display: none;
+  }
+  
+  .star-rating label {
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  
+  .star-rating input:checked ~ label,
+  .star-rating label:hover,
+  .star-rating label:hover ~ label {
+    color: #d4af37;
+  }
+  
+  .review-stars {
+    color: #d4af37;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 2px 0;
+    line-height: 1;
+  }
+  
+  .review-box {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 22px 28px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .review-box:hover {
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .review-box span {
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .review-box small {
+    display: block;
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+  
+  .text-success {
+    font-weight: 600;
+    color: #28a745;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.1rem;
+  }
+  

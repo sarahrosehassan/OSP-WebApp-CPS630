@@ -1,0 +1,135 @@
+body {
+    background: linear-gradient(135deg, #fdfdfd 0%, #eaeaea 100%);
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    padding-bottom: 60px;
+    color: #1a1a1a;
+  }
+
+.process-body {
+    padding-top: 100px;
+}
+  
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.7rem;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 45px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  
+
+  .card {
+    background: #ffffff;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  }
+  
+  .card-body {
+    padding: 30px;
+  }
+  
+
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    font-weight: 600;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+  }
+
+  .table {
+    margin-bottom: 0;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+  }
+  
+  .table th {
+    font-family: 'Playfair Display', serif;
+    color: #1a1a1a;
+    font-weight: 600;
+    font-size: 1rem;
+    border-top: none;
+    padding-bottom: 12px;
+  }
+  
+  .table td {
+    vertical-align: middle;
+    color: #555;
+    font-size: 0.95rem;
+    background: #fdfdfd;
+    border-radius: 8px;
+    padding: 12px 15px;
+  }
+  
+
+  .total-amount {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #d4af37;
+    font-family: 'Playfair Display', serif;
+    margin-top: 10px;
+  }
+  
+
+  .btn-success {
+    background: #d4af37;
+    border: none;
+    padding: 14px 35px;
+    font-size: 1.1rem;
+    color: #1a1a1a;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn-success:hover {
+    background: #1a1a1a;
+    color: #d4af37;
+    transform: translateY(-2px);
+  }
+  
+
+  .row.mb-2 {
+    margin-bottom: 15px;
+  }
+  
+  .text-end {
+    text-align: right;
+  }
+  
+
+  @media (max-width: 768px) {
+    .card-body {
+      padding: 20px;
+    }
+  
+    .btn-success {
+      width: 100%;
+      padding: 12px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    .card-title {
+      font-size: 1.4rem;
+    }
+  }
+  
