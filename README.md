@@ -57,9 +57,10 @@ Create a database named **`osp`** and import the dump.
 You can use either phpMyAdmin (recommended for XAMPP users) or the MySQL command line:
 
 **phpMyAdmin (XAMPP users):**
-1. Open phpMyAdmin (usually at `http://localhost/phpmyadmin`).
-2. Create database **`osp`** (utf8mb4).
-3. Go to **Import** → choose `db/osp.sql` → **Go**.
+1. Start Apache and MySQL in XAMPP (required for phpMyAdmin to work).
+2. Open phpMyAdmin (usually at `http://localhost/phpmyadmin`).
+3. Create database **`osp`** (utf8mb4).
+4. Go to **Import** → choose `db/osp.sql` → **Go**.
 
 **MySQL Command Line (any MySQL install):**
 ```bash
@@ -72,12 +73,20 @@ mysql -u root -p osp < db/osp.sql
 ## 2) XAMPP / Apache (RECOMMENDED)
 
 This is the canonical way the project was built and tested.
+> **Tip:** For best results, keep your project outside of `htdocs` during development. This allows you to use git and edit freely in VS Code. Only copy or sync your project to `htdocs` when you need to test with XAMPP/Apache. This avoids permission issues and keeps your git history intact.
 
-1. **Place the project under XAMPP htdocs**
 
-   ```
-   /Applications/XAMPP/xamppfiles/htdocs/osp
-   ```
+1. **Copy the project under XAMPP htdocs**
+
+  The easiest way is to use the provided shell script:
+  ```zsh
+  chmod +x copy-to-xampp.sh   # Make the script executable (required only once)
+  ./copy-to-xampp.sh          # Run the script to copy everything automatically
+  ```
+  - The script assumes your XAMPP is installed at `/Applications/XAMPP/xamppfiles/htdocs/osp` (macOS default).
+  - If your XAMPP is installed elsewhere, edit the `DEST_DIR` variable in the script to match your setup.
+
+  The folder name `osp` is a suggested short form for simplicity. You may use a more descriptive name if you prefer, but update related paths and config values accordingly.
 
 2. **Backend DB & CORS config**
    Make sure each file in `backend/api/*.php` has this near the top (before any output):
@@ -114,6 +123,14 @@ This is the canonical way the project was built and tested.
    ```
 
 6. **Open the app:** [http://localhost:5173](http://localhost:5173) → go to **/signup**, then **/login**.
+
+**Sample info for quick signup testing:**
+  - Name: Demo User
+  - Email: demo@example.com
+  - Password: Secret123!
+  - Phone: 5551112222
+  - Address: 123 Main St
+  - City: Toronto (city_code: TOR)
 
 **Apache 403 fix (if needed)**
 In `/Applications/XAMPP/xamppfiles/etc/httpd.conf`, either comment out vhosts:
@@ -272,6 +289,28 @@ chmod +x scripts/dev.sh
 
 ---
 
+## Quick Project Setup for XAMPP
+
+The easiest way to set up the entire project for XAMPP is to use the provided shell script. This will copy all files (backend, frontend, db, etc.) to your XAMPP `htdocs` directory automatically.
+
+**Default usage (recommended):**
+
+```zsh
+chmod +x copy-to-xampp.sh   # Make the script executable (required only once)
+./copy-to-xampp.sh          # Run the script
+```
+
+- The script assumes your XAMPP is installed at `/Applications/XAMPP/xamppfiles/htdocs/osp` (macOS default).
+- If your XAMPP is installed elsewhere, edit the `DEST_DIR` variable in the script to match your setup.
+
+**After running the script:**
+1. Start Apache and MySQL in XAMPP.
+2. Access your backend at: `http://localhost/osp/backend/api/`
+3. Access your frontend at: `http://localhost:5173` (if running Vite locally)
+4. No manual file edits or copying required!
+
+---
+
 ## Notes
 
 * Passwords are stored with **bcrypt** — use **/signup** or the API to create accounts.
@@ -281,5 +320,3 @@ chmod +x scripts/dev.sh
   * `my-app/node_modules/`
   * `.DS_Store`
 * If you rely on XAMPP, keep using it — it’s the **recommended** path for this project.
-
-````
