@@ -142,8 +142,11 @@ Restart Apache after changes.
 
 Use this if you want to run outside `htdocs` (e.g., `~/Coding/OSP-WebApp-CPS630`).
 
-1. **Run the backend** (new terminal):
+**You will need two terminal windows/tabs:**
+  - One for the backend
+  - One for the frontend
 
+1. **Run the backend** (first terminal):
    ```bash
    cd backend
    php -S localhost:8081 -t .
@@ -151,14 +154,18 @@ Use this if you want to run outside `htdocs` (e.g., `~/Coding/OSP-WebApp-CPS630`
 
    API base is now **[http://localhost:8081/api](http://localhost:8081/api)**
 
-2. **Frontend config** → create `my-app/.env.local`:
+2. **Frontend config**
+   - Copy `my-app/.env.example` to `my-app/.env.local`:
+     ```bash
+     cp my-app/.env.example my-app/.env.local
+     ```
+   - Edit `VITE_API_BASE` in `.env.local` if needed.
 
    ```
    VITE_API_BASE=http://localhost:8081/api
    ```
 
-3. **Run the frontend**
-
+3. **Run the frontend** (second terminal):
    ```bash
    cd my-app
    npm install
@@ -168,6 +175,12 @@ Use this if you want to run outside `htdocs` (e.g., `~/Coding/OSP-WebApp-CPS630`
 4. **Open the app:** [http://localhost:5173](http://localhost:5173) → **/signup**
 
 > If you change ports, update both `.env.local` and the PHP CORS origin.
+
+---
+
+## .env.example
+
+The file `my-app/.env.example` is included as a template for environment variables. Copy it to `.env.local` and update the values as needed. This keeps sensitive or environment-specific settings out of version control and makes setup easier for new users.
 
 ---
 
