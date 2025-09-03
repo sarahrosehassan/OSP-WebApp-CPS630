@@ -1,5 +1,4 @@
 # OSP Web App (CPS630)
-# OSP Web App (CPS630)
 
 **Luxe Haven** — an e-commerce demo built with **React (Vite)** + **PHP** + **MySQL**.
 
@@ -55,16 +54,18 @@
 
 Create a database named **`osp`** and import the dump.
 
-**phpMyAdmin**
-1. Open phpMyAdmin (e.g., `http://localhost/phpmyadmin`).
+You can use either phpMyAdmin (recommended for XAMPP users) or the MySQL command line:
+
+**phpMyAdmin (XAMPP users):**
+1. Open phpMyAdmin (usually at `http://localhost/phpmyadmin`).
 2. Create database **`osp`** (utf8mb4).
 3. Go to **Import** → choose `db/osp.sql` → **Go**.
 
-**CLI**
+**MySQL Command Line (any MySQL install):**
 ```bash
 mysql -u root -p -e 'DROP DATABASE IF EXISTS osp; CREATE DATABASE osp;'
 mysql -u root -p osp < db/osp.sql
-````
+```
 
 ---
 
