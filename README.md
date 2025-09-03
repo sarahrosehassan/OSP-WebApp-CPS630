@@ -1,4 +1,4 @@
-```md
+# OSP Web App (CPS630)
 # OSP Web App (CPS630)
 
 **Luxe Haven** — an e-commerce demo built with **React (Vite)** + **PHP** + **MySQL**.
@@ -40,17 +40,14 @@
 ---
 
 ## Project Structure
-```
 
-.
+. 
 ├─ backend/
 │  └─ api/                 # PHP endpoints (login.php, signup.php, etc.)
 ├─ my-app/                 # React (Vite) frontend
 │  └─ src/...
 └─ db/
 └─ osp.sql              # Database dump (schema + seed data)
-
-````
 
 ---
 
