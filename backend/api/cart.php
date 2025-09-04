@@ -1,4 +1,10 @@
 <?php
+header("Access-Control-Allow-Origin: http://localhost:5173");
+header("Access-Control-Allow-Credentials: true");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') { http_response_code(200); exit(); }
+header("Content-Type: application/json");
 // Enable error reporting for debugging
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -17,17 +23,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
     echo json_encode(["success" => false, "message" => "Database connection failed: " . $conn->connect_error]);
-    exit();
-}
-
-// Set CORS headers
-header("Content-Type: application/json");
-header("Access-Control-Allow-Origin: http://localhost:5174"); 
-header("Access-Control-Allow-Credentials: true"); 
-
-// Ensure the user is logged in
-if (!isset($_SESSION['user_id'])) {
-    echo json_encode(["success" => false, "message" => "User not logged in"]);
     exit();
 }
 
